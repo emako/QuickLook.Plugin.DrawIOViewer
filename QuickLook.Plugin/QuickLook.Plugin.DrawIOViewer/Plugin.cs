@@ -16,6 +16,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using Microsoft.Win32;
+using QuickLook.Common.Helpers;
 using QuickLook.Common.Plugin;
 using System;
 using System.Collections.Generic;
@@ -98,7 +99,9 @@ public class Plugin : IViewer
             _drawio = FindDrawIO();
         }
 
-        string png = Path.GetFullPath(@".\QuickLook.Plugin\QuickLook.Plugin.DrawIOViewer\diagram.png");
+        string png = Directory.Exists(@".\QuickLook.Plugin\QuickLook.Plugin.DrawIOViewer")
+                        ? Path.GetFullPath(@".\QuickLook.Plugin\QuickLook.Plugin.DrawIOViewer\diagram.png")
+                        : Path.Combine(SettingHelper.LocalDataPath, @"QuickLook.Plugin\QuickLook.Plugin.DrawIOViewer\diagram.png");
 
         if (File.Exists(png))
         {
