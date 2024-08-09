@@ -10,9 +10,9 @@ The following file extensions are treated as draw.io files.
 
 - drawio
 
-## Thanks to
+## Dependencies
 
- - https://github.com/jgraph/drawio-desktop
+- [drawio-desktop](https://github.com/jgraph/drawio-desktop)
 
 ## Licenses
 
