@@ -1,4 +1,4 @@
-﻿// Copyright © 2024 ema
+﻿// Copyright © 2025 ema
 //
 // This file is part of QuickLook program.
 //
@@ -30,12 +30,10 @@ namespace QuickLook.Plugin.DrawIOViewer;
 
 public class Plugin : IViewer
 {
-    private static readonly HashSet<string> hashSet =
+    private static readonly HashSet<string> WellKnownImageExtensions =
     [
         ".drawio",
     ];
-
-    private static readonly HashSet<string> WellKnownImageExtensions = hashSet;
 
     private ImagePanel? _ip;
     private string _drawio = null!;
@@ -74,7 +72,13 @@ public class Plugin : IViewer
             bitmap.EndInit();
             bitmap.Freeze();
 
-            _ip.Dispatcher.Invoke(() => _ip.Source = bitmap);
+            if (_ip is null) return;
+
+            _ip.Dispatcher.Invoke(() =>
+            {
+                _ip.Source = bitmap;
+                _ip.DoZoomToFit();
+            });
 
             context.IsBusy = false;
         });
