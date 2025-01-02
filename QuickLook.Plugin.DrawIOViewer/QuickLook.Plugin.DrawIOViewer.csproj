@@ -15,7 +15,7 @@
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
         <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-        <ProjectGuid>{2CCBE8B7-8CB4-4AB9-8740-FC97E26C9649}</ProjectGuid>
+        <ProjectGuid>{2A32B8B3-F6C9-4A9B-91E0-D0A61F82DB15}</ProjectGuid>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -70,6 +70,12 @@
     <ItemGroup>
         <Resource Include="Resources\background-b.png" />
         <Resource Include="Resources\background.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\QuickLook.Plugin.Metadata.config">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
